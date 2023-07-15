@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #212529;
+  padding: 2vh;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.container {
+  padding-top: 60px;
+  /* Adjust according to navbar height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: auto;
+}
+
+.card {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  overflow-y: auto;
+  max-height: calc(100% - 150px);
+  /* Adjust according to navbar and footer height */
+}
+
+#scrolling-message {
+  font-size: 24px;
+  color: #333333;
+  white-space: pre-wrap;
+}
+
+.message-heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.message-added {
+  font-size: 14px;
+  color: #999999;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.add-text {
+  margin-top: 1rem;
+  text-align: center;
+  background-color: #262626;
+}
+
+.add-text p {
+  color: #ffffff;
+  margin: 0;
+  padding: 1vh;
+}
+
+.footer {
+  background-color: #212529;
+  text-align: center;
+  padding: 0;
+  width: 100%;
+  color: #ffffff;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: #f8f9fa;
+  border: none;
+  color: #212529;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  display: none;
+  min-width: 10rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li {
+  padding: 0;
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+@media (max-width: 768px) {
+
+  .card {
+    max-height: none;
+  }
+}

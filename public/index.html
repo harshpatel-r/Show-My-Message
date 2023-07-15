@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="#">Show My Message</a>
+    <div class="dropdown" id="dropdownContainer">
+      <i class="fa-solid fa-circle-info fa-xl" id="dropdownButton" data-bs-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false" style="color: white;"></i>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownButton">
+        <li><button class="dropdown-item" type="button">Action</button></li>
+        <li><button class="dropdown-item" type="button">Another action</button></li>
+        <li><button class="dropdown-item" type="button">Something else here</button></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="card">
+      <h2 class="message-heading">Message:</h2>
+      <div id="scrolling-message"></div>
+      <div class="message-added">- Message added by {username}</div>
+    </div>
+    <div class="add-text">
+      <p>If you want to add your message, click the button below</p>
+      <button class="btn btn-primary" style="margin-bottom: 1vh;">Add Your Message</button>
+    </div>
+    <div class="footer">
+      <p>Description: If you want to show your message on this website, please make a minimum payment of Rs 1 and your
+        message will be displayed.</p>
+    </div>
+  </div>
+
+<script src="js/script.js"></script>
+</body>
+
+</html>
