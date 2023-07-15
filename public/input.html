@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show Me Message</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .navbar {
+      background-color: #212529;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+    }
+    
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    
+    .form-container {
+      width: 90%;
+      max-width: 600px;
+      padding: 20px;
+      margin: 100px auto;
+      background-color: #333;
+      border-radius: 10px;
+      /* display: flex; */
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .form-container input,
+    .form-container select,
+    .form-container button,
+    .form-container textarea {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 18px;
+      background-color: #111;
+      color: #fff;
+    }
+    
+    .form-container textarea {
+      width: calc(100% - 50px); /* Adjust the width as needed */
+    }
+    
+    .form-container .message-container {
+      position: relative;
+      width: 100%;
+    }
+    
+    .circle {
+      background-color: #fff;
+      color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      position: absolute;
+      top: 44%;
+      right: 5px;
+      transform: translateY(-50%);
+      overflow: hidden;
+    }
+    
+    .circle span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      color: #fff;
+      font-size: 15px;
+      border-radius: 50%;
+    }
+    
+    .footer {
+      background-color: #212529;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+    }
+    
+    .dark-mode {
+      background-color: #000;
+      color: #fff;
+    }
+
+    @media screen and (max-width: 600px) {
+      .form-container {
+        font-size: 16px;
+        margin-top: 80px;
+      }
+      
+      .form-container input,
+      .form-container select,
+      .form-container button,
+      .form-container textarea {
+        font-size: 14px;
+      }
+    }
+  </style>
+  <script>
+    function updateMessageLength() {
+      const message = document.getElementById("message");
+      const messageLength = message.value.length;
+      const circle = document.getElementById("circle");
+      const remainingCharacters = 280 - messageLength;
+      circle.textContent = remainingCharacters;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <a class="navbar-brand" href="#">Show Me Message</a>
+    </nav>
+    <div class="form-container">
+      <form action="./index.html">
+        <input type="text" id="name" placeholder="Name">
+        <div class="message-container">
+          <textarea id="message" placeholder="Message" rows="4" oninput="updateMessageLength()"></textarea>
+          <div class="circle">
+            <span id="circle">280</span>
+          </div>
+        </div>
+        <input type="text" id="amount" placeholder="Amount">
+        <div>
+          <select id="payment">
+            <option value="paytm">Paytm</option>
+            <option value="googlepay">Google Pay</option>
+            <option value="payment">Payment</option>
+          </select>
+        </div>
+        <button type="submit" id="pay" style="background-color: blue;">Pay</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer">
+    <p>You need to pay a minimum of 1 Rs to show your message.</p>
+  </div>
+</body>
+</html>

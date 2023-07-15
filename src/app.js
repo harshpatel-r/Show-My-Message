@@ -1,7 +1,5 @@
 const path = require('path');
 const express = require('express');
-require("./db/mongoose");
-const Message = require("./model/message");
 
 const app = express();
 const port = process.env.PORT || 3000;
